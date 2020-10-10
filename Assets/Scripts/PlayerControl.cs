@@ -35,6 +35,10 @@ public class PlayerControl : MonoBehaviour {
   }
 
   void FixedUpdate () {
+
+    if (lives <= 0)  {
+      Destroy(this.gameObject);
+    }
     motionSpeed = (viewport.right * InputManager.Player.Motion.ReadValue<Vector2>().x +
                    viewport.forward * InputManager.Player.Motion.ReadValue<Vector2>().y) * speed;
     body.MovePosition(transform.position + motionSpeed * Time.deltaTime);
