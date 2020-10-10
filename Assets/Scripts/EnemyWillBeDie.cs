@@ -18,6 +18,7 @@ public class EnemyWillBeDie : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Ball") {
+            Destroy(this.gameObject);
             Debug.Log("LOL u die lol lol u die");
         }
     }
