@@ -41,6 +41,30 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MouseAim"",
+                    ""type"": ""Value"",
+                    ""id"": ""a0d17faa-52bd-462e-9dfc-f27f7805fd1a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""GamepadUseIndicator"",
+                    ""type"": ""Value"",
+                    ""id"": ""1e77b6d4-b2cf-4a45-89b4-8280fc86eefb"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""KeyboardUseIndicator"",
+                    ""type"": ""Button"",
+                    ""id"": ""a42a8ff2-4609-4a41-adf4-c42f004e9006"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -142,6 +166,50 @@ public class @TheInput : IInputActionCollection, IDisposable
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""42ec46b2-4fa3-4ff2-aaee-0eef45f33fdf"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseAim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c409ace0-c168-4961-86e9-95d1022b5eb8"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GamepadUseIndicator"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64b70dc2-4e9e-408f-86e6-c24fd5ed1d89"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GamepadUseIndicator"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b693eec-d597-48df-9872-bd254039fc2e"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyboardUseIndicator"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -153,6 +221,9 @@ public class @TheInput : IInputActionCollection, IDisposable
         m_PlayerControl_Motion = m_PlayerControl.FindAction("Motion", throwIfNotFound: true);
         m_PlayerControl_JoystickAim = m_PlayerControl.FindAction("JoystickAim", throwIfNotFound: true);
         m_PlayerControl_Fire = m_PlayerControl.FindAction("Fire", throwIfNotFound: true);
+        m_PlayerControl_MouseAim = m_PlayerControl.FindAction("MouseAim", throwIfNotFound: true);
+        m_PlayerControl_GamepadUseIndicator = m_PlayerControl.FindAction("GamepadUseIndicator", throwIfNotFound: true);
+        m_PlayerControl_KeyboardUseIndicator = m_PlayerControl.FindAction("KeyboardUseIndicator", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -205,6 +276,9 @@ public class @TheInput : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerControl_Motion;
     private readonly InputAction m_PlayerControl_JoystickAim;
     private readonly InputAction m_PlayerControl_Fire;
+    private readonly InputAction m_PlayerControl_MouseAim;
+    private readonly InputAction m_PlayerControl_GamepadUseIndicator;
+    private readonly InputAction m_PlayerControl_KeyboardUseIndicator;
     public struct PlayerControlActions
     {
         private @TheInput m_Wrapper;
@@ -212,6 +286,9 @@ public class @TheInput : IInputActionCollection, IDisposable
         public InputAction @Motion => m_Wrapper.m_PlayerControl_Motion;
         public InputAction @JoystickAim => m_Wrapper.m_PlayerControl_JoystickAim;
         public InputAction @Fire => m_Wrapper.m_PlayerControl_Fire;
+        public InputAction @MouseAim => m_Wrapper.m_PlayerControl_MouseAim;
+        public InputAction @GamepadUseIndicator => m_Wrapper.m_PlayerControl_GamepadUseIndicator;
+        public InputAction @KeyboardUseIndicator => m_Wrapper.m_PlayerControl_KeyboardUseIndicator;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -230,6 +307,15 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @Fire.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnFire;
+                @MouseAim.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnMouseAim;
+                @MouseAim.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnMouseAim;
+                @MouseAim.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnMouseAim;
+                @GamepadUseIndicator.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnGamepadUseIndicator;
+                @GamepadUseIndicator.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnGamepadUseIndicator;
+                @GamepadUseIndicator.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnGamepadUseIndicator;
+                @KeyboardUseIndicator.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnKeyboardUseIndicator;
+                @KeyboardUseIndicator.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnKeyboardUseIndicator;
+                @KeyboardUseIndicator.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnKeyboardUseIndicator;
             }
             m_Wrapper.m_PlayerControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -243,6 +329,15 @@ public class @TheInput : IInputActionCollection, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @MouseAim.started += instance.OnMouseAim;
+                @MouseAim.performed += instance.OnMouseAim;
+                @MouseAim.canceled += instance.OnMouseAim;
+                @GamepadUseIndicator.started += instance.OnGamepadUseIndicator;
+                @GamepadUseIndicator.performed += instance.OnGamepadUseIndicator;
+                @GamepadUseIndicator.canceled += instance.OnGamepadUseIndicator;
+                @KeyboardUseIndicator.started += instance.OnKeyboardUseIndicator;
+                @KeyboardUseIndicator.performed += instance.OnKeyboardUseIndicator;
+                @KeyboardUseIndicator.canceled += instance.OnKeyboardUseIndicator;
             }
         }
     }
@@ -252,5 +347,8 @@ public class @TheInput : IInputActionCollection, IDisposable
         void OnMotion(InputAction.CallbackContext context);
         void OnJoystickAim(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnMouseAim(InputAction.CallbackContext context);
+        void OnGamepadUseIndicator(InputAction.CallbackContext context);
+        void OnKeyboardUseIndicator(InputAction.CallbackContext context);
     }
 }
