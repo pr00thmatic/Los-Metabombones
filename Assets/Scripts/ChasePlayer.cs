@@ -29,6 +29,8 @@ public class ChasePlayer : MonoBehaviour
     }
     void moveCharacter(Vector3 direction){
         Debug.Log(direction);
-        rb.MovePosition(transform.position + (direction * moveSpeed * Time.deltaTime));
+        if (Vector3.Distance(player.position, transform.position) > 1) {
+           rb.MovePosition(transform.position + (direction * moveSpeed * Time.deltaTime));
+        }
     }
 }
