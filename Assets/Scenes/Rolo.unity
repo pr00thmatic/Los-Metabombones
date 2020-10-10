@@ -526,7 +526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909554324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.9, y: 0.4, z: -63.2}
+  m_LocalPosition: {x: 0, y: 0, z: -4.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 136754207}
@@ -749,6 +749,7 @@ MonoBehaviour:
   root: {fileID: 1854001504}
   ball: {fileID: 1854001506}
   objetive: {fileID: 2004663740}
+  start: {fileID: 0}
 --- !u!54 &1854001506
 Rigidbody:
   m_ObjectHideFlags: 0
