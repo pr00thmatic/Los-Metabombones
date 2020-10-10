@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour {
 
   [Header("Configuration")]
   public float speed;
+  public int lives;
 
   [Header("Information")]
   public Vector3 motionSpeed;
@@ -24,6 +25,7 @@ public class PlayerControl : MonoBehaviour {
 
   void Start () {
     ballThrowDirection = transform.forward;
+    lives = 5;
   }
 
   void OnEnable () {
