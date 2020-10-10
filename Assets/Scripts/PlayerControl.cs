@@ -48,7 +48,7 @@ public class PlayerControl : MonoBehaviour {
       Ray ray = Camera.main.ScreenPointToRay(target);
       float distance;
       (new Plane(Vector3.up, transform.position)).Raycast(Camera.main.ScreenPointToRay(target), out distance);
-      target = ray.GetPoint(distance) - transform.position;
+      target = (ray.GetPoint(distance) - transform.position).normalized;
     }
     if (target != Vector3.zero) {
       ballThrowDirection = target;
