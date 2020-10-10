@@ -30,7 +30,6 @@ public class PlayerControl : MonoBehaviour {
     InputManager.Player.Fire.performed += ctx => onThrowBallRequested?.Invoke();
     InputManager.Player.GamepadUseIndicator.performed += ctx => useGamepad = true;
     InputManager.Player.KeyboardUseIndicator.performed += ctx => useGamepad = false;
-    onThrowBallRequested += asdf;
   }
 
   void FixedUpdate () {
@@ -44,14 +43,13 @@ public class PlayerControl : MonoBehaviour {
         viewport.forward * InputManager.Player.JoystickAim.ReadValue<Vector2>().y;
     } else {
       target = InputManager.Player.MouseAim.ReadValue<Vector2>();
-      target = Camera.main.ScreenToWorldPoint(new Vector3(target.x, Vector3.Distance(transform.position, Camera.main.transform.position), target.z));
+      Ray ray = Camera.main.ScreenPointToRay(target);
+      float distance;
+      (new Plane(Vector3.up, transform.position)).Raycast(Camera.main.ScreenPointToRay(target), out distance);
+      target = ray.GetPoint(distance) - transform.position;
     }
     if (target != Vector3.zero) {
       ballThrowDirection = target;
     }
-  }
-
-  public void asdf () {
-    Debug.Log("BANG! " + Time.time);
   }
 }
