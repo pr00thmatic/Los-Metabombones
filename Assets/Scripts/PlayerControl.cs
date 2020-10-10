@@ -17,6 +17,9 @@ public class PlayerControl : MonoBehaviour {
   [Header("Initialization")]
   public Rigidbody body;
   public Transform viewport;
+  public float lastX;
+  public float x;
+  public bool isMoving;
 
   void Reset () {
     body = GetComponent<Rigidbody>();
@@ -26,6 +29,7 @@ public class PlayerControl : MonoBehaviour {
   void Start () {
     ballThrowDirection = transform.forward;
     lives = 5;
+    isMoving = false;
   }
 
   void OnEnable () {
@@ -35,6 +39,7 @@ public class PlayerControl : MonoBehaviour {
   }
 
   void FixedUpdate () {
+    isMoving = false;
 
     if (lives <= 0)  {
       Destroy(this.gameObject);
@@ -42,6 +47,13 @@ public class PlayerControl : MonoBehaviour {
     motionSpeed = (viewport.right * InputManager.Player.Motion.ReadValue<Vector2>().x +
                    viewport.forward * InputManager.Player.Motion.ReadValue<Vector2>().y) * speed;
     body.MovePosition(transform.position + motionSpeed * Time.deltaTime);
+
+    float x = InputManager.Player.Motion.ReadValue<Vector2>().x;
+    if (!motionSpeed.Equals(Vector3.zero))
+    {
+      isMoving = true;
+      lastX = x;
+    }
 
     Vector3 target;
     if (useGamepad) {
@@ -57,5 +69,28 @@ public class PlayerControl : MonoBehaviour {
     if (target != Vector3.zero) {
       ballThrowDirection = target;
     }
+    
+    if(x > 0)
+    {
+      transform.Find("SpriteRight").gameObject.SetActive(false);
+      transform.Find("SpriteLeft").gameObject.SetActive(true);
+    } else
+    {
+      transform.Find("SpriteLeft").gameObject.SetActive(false);
+      transform.Find("SpriteRight").gameObject.SetActive(true);
+    }
+    if (!isMoving)
+    {
+      if (lastX > 0)
+      {
+        transform.Find("SpriteRight").gameObject.SetActive(false);
+        transform.Find("SpriteLeft").gameObject.SetActive(true);
+      } else
+      {
+        transform.Find("SpriteLeft").gameObject.SetActive(false);
+        transform.Find("SpriteRight").gameObject.SetActive(true);
+      }
+    }
+    
   }
 }
