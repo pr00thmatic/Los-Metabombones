@@ -69,28 +69,15 @@ public class PlayerControl : MonoBehaviour {
     if (target != Vector3.zero) {
       ballThrowDirection = target;
     }
-    
-    if(x > 0)
+
+    if(x > 0 && !transform.Find("SpriteLeft").gameObject.activeSelf)
     {
       transform.Find("SpriteRight").gameObject.SetActive(false);
       transform.Find("SpriteLeft").gameObject.SetActive(true);
-    } else
+    } else if (x < 0 && !transform.Find("SpriteRight").gameObject.activeSelf)
     {
       transform.Find("SpriteLeft").gameObject.SetActive(false);
       transform.Find("SpriteRight").gameObject.SetActive(true);
     }
-    if (!isMoving)
-    {
-      if (lastX > 0)
-      {
-        transform.Find("SpriteRight").gameObject.SetActive(false);
-        transform.Find("SpriteLeft").gameObject.SetActive(true);
-      } else
-      {
-        transform.Find("SpriteLeft").gameObject.SetActive(false);
-        transform.Find("SpriteRight").gameObject.SetActive(true);
-      }
-    }
-    
   }
 }
