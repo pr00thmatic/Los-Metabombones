@@ -1035,6 +1035,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4a401b4404dd2649a873752029746be, type: 3}
+--- !u!54 &2806019397235390677 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 268944341, guid: e4a401b4404dd2649a873752029746be,
+    type: 3}
+  m_PrefabInstance: {fileID: 2806019397235390676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3622803465810719177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1042,6 +1048,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1358212946, guid: 16cec61ee4be0e342b60fce3b0f8a664, type: 3}
+      propertyPath: m_Sources.Array.data[0].sourceTransform
+      value: 
+      objectReference: {fileID: 1120825656}
     - target: {fileID: 3622803465326552880, guid: 16cec61ee4be0e342b60fce3b0f8a664,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1111,7 +1121,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedBody
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2806019397235390677}
     - target: {fileID: 3622803465473059778, guid: 16cec61ee4be0e342b60fce3b0f8a664,
         type: 3}
       propertyPath: control
