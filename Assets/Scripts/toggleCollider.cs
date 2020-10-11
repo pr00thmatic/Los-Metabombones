@@ -32,10 +32,10 @@ public class toggleCollider : MonoBehaviour
         StartCoroutine(_coRoutine());
     }
     void OnTriggerEnter(Collider other) {
-        Debug.Log("ENTER HEDRE " + other.gameObject.tag);
         if (other.gameObject.tag == "Enemy") {
             Debug.Log("ATTACKING BALLLLLLLLLLLLLLLLLLLLLLLL");
-            GetComponent<AudioSource> ().Play ();
+            GetComponent<AudioSource> ().PlayOneShot(audio, 1F);
+
         }
     }
 
