@@ -13,7 +13,7 @@ public class LevelMusic : MonoBehaviour
     {
         GetComponent<AudioSource> ().loop = true;
         StartCoroutine(playEngineSound());
-       FadeSound();
+       //FadeSound();
     }
     
     // Update is called once per frame
