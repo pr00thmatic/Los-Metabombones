@@ -32,6 +32,7 @@ public class toggleCollider : MonoBehaviour
         StartCoroutine(_coRoutine());
     }
     void OnTriggerEnter(Collider other) {
+        Debug.Log("tag === " + other.gameObject.tag );
         if (other.gameObject.tag == "Enemy") {
             Debug.Log("ATTACKING BALLLLLLLLLLLLLLLLLLLLLLLL");
             GetComponent<AudioSource> ().PlayOneShot(audio, 1F);
