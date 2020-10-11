@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class BallConstraint : NonPersistentSingleton<BallConstraint> {
   public float maxDistance = 4;
+  [HideInInspector]
   public Transform player;
   public Rigidbody body;
   public SpriteRenderer[] letalIndicator;
   public SphereCollider collider;
+
+  void Start () {
+    player = PlayerControl.Instance.transform;
+  }
 
   void FixedUpdate () {
     Vector3 d = transform.position - player.position;
