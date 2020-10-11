@@ -12,6 +12,7 @@ public class enemyAttack : MonoBehaviour
     void Start()
     {
         canAttack = true;
+        control = PlayerControl.Instance;
     }
 
     // Update is called once per frame
@@ -22,10 +23,12 @@ public class enemyAttack : MonoBehaviour
     IEnumerator _coRoutine() {
         if (canAttack) {
             canAttack = false;
-            control.lives -= damage;
-            Debug.Log("ouch " + control.lives );
-            yield return new WaitForSeconds(2);
-            canAttack = true;
+            if (control != null) {
+                control.lives -= damage;
+                Debug.Log("ouch " + control.lives );
+                yield return new WaitForSeconds(2);
+                canAttack = true;
+            }
         }
     }
     void OnTriggerEnter(Collider other) {

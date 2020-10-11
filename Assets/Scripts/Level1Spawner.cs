@@ -8,15 +8,15 @@ public class Level1Spawner : MonoBehaviour
     public GameObject SoldierEnemy;
 
 
-    public int totalEnemy = 10;
+    public int totalEnemy = 1;
 	private int numEnemy = 0;
 	private int spawnedEnemy = 0;
 
     public bool spawn = true;
     public bool waveSpawn = true;
-    public float waveTimer = 3.0f;
+    public float waveTimer = 5.0f;
     private float timeTillWave = 0.0f;
-	public int totalWaves = 5;
+	public int totalWaves = 100000;
 	private int numWaves = 0;
 
     void Start()
