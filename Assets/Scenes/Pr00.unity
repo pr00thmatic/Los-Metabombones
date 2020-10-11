@@ -512,24 +512,6 @@ Transform:
   m_Father: {fileID: 1310157985}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -25.289001, z: 0}
---- !u!1 &403958426 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2806019396407075177, guid: e4a401b4404dd2649a873752029746be,
-    type: 3}
-  m_PrefabInstance: {fileID: 2806019397235390676}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &403958429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403958426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 498bd23f96101ef4ca03889053b7bd41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &423274818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2404,19 +2386,6 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 2069279985}
-    - target: {fileID: 1873206214, guid: e4a401b4404dd2649a873752029746be, type: 3}
-      propertyPath: min
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1873206214, guid: e4a401b4404dd2649a873752029746be, type: 3}
-      propertyPath: max
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1398593338945043473, guid: e4a401b4404dd2649a873752029746be,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2806019397712461648, guid: e4a401b4404dd2649a873752029746be,
         type: 3}
       propertyPath: viewport
@@ -2481,21 +2450,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8460142319298322766, guid: e4a401b4404dd2649a873752029746be,
-        type: 3}
-      propertyPath: min
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8460142319298322766, guid: e4a401b4404dd2649a873752029746be,
-        type: 3}
-      propertyPath: minDistance
-      value: 12.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8460142319298322766, guid: e4a401b4404dd2649a873752029746be,
-        type: 3}
-      propertyPath: maxDistance
-      value: 34.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4a401b4404dd2649a873752029746be, type: 3}
