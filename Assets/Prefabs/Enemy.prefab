@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f08014bb7d04a04c801580466b4799c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2806019397712461655, guid: e4a401b4404dd2649a873752029746be, type: 3}
+  player: {fileID: 0}
   moveSpeed: 5
 --- !u!54 &8870651538655209143
 Rigidbody:

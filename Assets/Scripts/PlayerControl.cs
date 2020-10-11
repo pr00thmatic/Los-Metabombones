@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour {
+public class PlayerControl : NonPersistentSingleton<PlayerControl> {
   public event System.Action onThrowBallRequested;
 
   [Header("Configuration")]

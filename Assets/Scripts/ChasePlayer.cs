@@ -14,13 +14,14 @@ public class ChasePlayer : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        player = PlayerControl.Instance.transform;
     }
 
     // Update is called once per frame
     void Update() {
         Vector3 direction = player.position - transform.position;
         Quaternion angle =  Quaternion.LookRotation(direction, Vector3.up);
-        rb.rotation = angle;
+        // rb.rotation = angle;
         direction.Normalize();
         movement = direction;
     }
