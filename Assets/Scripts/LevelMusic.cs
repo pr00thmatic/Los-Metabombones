@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class LevelMusic : MonoBehaviour
+public class LevelMusic : NonPersistentSingleton<LevelMusic>
 {
     // Start is called before the first frame update
     static bool firstTime = true;

@@ -20,6 +20,8 @@ public class PlayerControl : NonPersistentSingleton<PlayerControl> {
   public float lastX;
   public float x;
   public bool isMoving;
+  public Vector3 Right { get => Vector3.Scale(new Vector3(1,0,1), viewport.right).normalized; }
+  public Vector3 Forward { get => Vector3.Scale(new Vector3(1,0,1), viewport.forward).normalized; }
 
   void Reset () {
     body = GetComponent<Rigidbody>();
@@ -44,8 +46,8 @@ public class PlayerControl : NonPersistentSingleton<PlayerControl> {
     if (lives <= 0)  {
       Destroy(this.gameObject);
     }
-    motionSpeed = (viewport.right * InputManager.Player.Motion.ReadValue<Vector2>().x +
-                   viewport.forward * InputManager.Player.Motion.ReadValue<Vector2>().y) * speed;
+    motionSpeed = (Right * InputManager.Player.Motion.ReadValue<Vector2>().x +
+                   Forward * InputManager.Player.Motion.ReadValue<Vector2>().y) * speed;
     body.MovePosition(transform.position + motionSpeed * Time.deltaTime);
 
     float x = InputManager.Player.Motion.ReadValue<Vector2>().x;

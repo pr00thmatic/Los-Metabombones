@@ -7,7 +7,7 @@ public class BallChain : MonoBehaviour {
   public Transform origin;
   public Transform ball;
 
-  void LateUpdate () {
+  void FixedUpdate () {
     line.SetPosition(0, origin.transform.position);
     line.SetPosition(1, ball.transform.position);
   }

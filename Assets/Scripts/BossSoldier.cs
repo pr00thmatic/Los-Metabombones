@@ -32,6 +32,7 @@ public class BossSoldier : MonoBehaviour {
     }
 
     if (attacking) {
+      if (!target) Destroy(gameObject);
       transform.position = Vector3.MoveTowards(transform.position, target.position,
                                                Speed * Time.deltaTime);
       if (transform.position == target.position) {
