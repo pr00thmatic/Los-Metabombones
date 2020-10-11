@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class BossSoldier : MonoBehaviour {
+  public float Speed { get => speedMultiplier * speed; }
+
+  public float speedMultiplier = 1;
   public float speed;
   public bool spinning = false;
   public bool attacking = false;
@@ -13,11 +16,13 @@ public class BossSoldier : MonoBehaviour {
   public Transform target;
   public NavMeshAgent agent;
   public float programmedDeath = 7;
+  // public Vector3 attackTarget;
 
   void Update () {
     if (spinning) {
       timeSpinning -= Time.deltaTime;
       if (timeSpinning <= 0) {
+        speedMultiplier = 0.8f;
         attacking = true;
         spinning = false;
         target = transform.parent;
@@ -28,8 +33,9 @@ public class BossSoldier : MonoBehaviour {
 
     if (attacking) {
       transform.position = Vector3.MoveTowards(transform.position, target.position,
-                                               speed * Time.deltaTime);
+                                               Speed * Time.deltaTime);
       if (transform.position == target.position) {
+        speedMultiplier = 1.5f;
         agent.enabled = true;
         agent.SetDestination(target.GetComponent<SoldiersBase>().exit.position);
         leaving = true;
@@ -46,7 +52,7 @@ public class BossSoldier : MonoBehaviour {
     }
 
     transform.position = Vector3.MoveTowards(transform.position, PlayerControl.Instance.transform.position,
-                                             speed * Time.deltaTime);
+                                             Speed * Time.deltaTime);
   }
 
   void OnTriggerEnter (Collider c) {

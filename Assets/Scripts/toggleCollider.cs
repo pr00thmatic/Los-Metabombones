@@ -29,6 +29,7 @@ public class toggleCollider : MonoBehaviour
         Debug.Log("collider " + m_Collider.enabled);
     }
     void toggle() {
+        StopAllCoroutines();
         StartCoroutine(_coRoutine());
     }
     void OnTriggerEnter(Collider other) {
