@@ -9,6 +9,7 @@ public class ChasePlayer : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody rb;
     private Vector3 movement;
+    private float lastX;
 
     // Start is called before the first frame update
     void Start()
@@ -36,5 +37,15 @@ public class ChasePlayer : MonoBehaviour
             direction.y = 0;
            rb.MovePosition(transform.position + (direction * moveSpeed * Time.deltaTime));
         }
+        if(transform.position.x > lastX)
+        {
+          transform.Find("SpriteRight").gameObject.SetActive(false);
+          transform.Find("SpriteLeft").gameObject.SetActive(true);
+        } else
+        {
+          transform.Find("SpriteRight").gameObject.SetActive(true);
+          transform.Find("SpriteLeft").gameObject.SetActive(false);
+        }
+        lastX = transform.position.x;
     }
 }
