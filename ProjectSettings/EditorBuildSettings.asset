@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Pr00.unity
+    guid: 013fff918a190b64db8dc01a468f8351
+  - enabled: 1
     path: Assets/Scenes/LuaWithLevel.unity
     guid: 2bd1e656e22db5445887241b3e859d05
   - enabled: 1
     path: Assets/Scenes/Lua.unity
     guid: 1b77c2c76fa58fa4e83d6e59298c875f
+  - enabled: 1
+    path: Assets/Scenes/LuaLevel2.unity
+    guid: ed5b80edda8d8344a885216162ee533d
   m_configObjects: {}
