@@ -57,7 +57,7 @@ public class Level1Spawner : MonoBehaviour
     private void spawnEnemy()
 	{
 		GameObject Enemy = (GameObject) Instantiate(SoldierEnemy, gameObject.transform.position, Quaternion.identity);
-		// Increase the total number of enemies spawned and the number of spawned enemies
+ 		// Increase the total number of enemies spawned and the number of spawned enemies
 		numEnemy++;
 		spawnedEnemy++;
 	}

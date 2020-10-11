@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelMusic : MonoBehaviour
 {
     // Start is called before the first frame update
+    static bool firstTime = true;
     public AudioClip engineStartClip;
     public AudioClip engineLoopClip;
     void Start()
@@ -21,11 +22,17 @@ public class LevelMusic : MonoBehaviour
 
     IEnumerator playEngineSound()
     {
-        GetComponent<AudioSource>().clip = engineStartClip;
-        GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
-        GetComponent<AudioSource>().clip = engineLoopClip;
-        GetComponent<AudioSource>().Play();
+        if (firstTime) {
+            GetComponent<AudioSource>().clip = engineStartClip;
+            GetComponent<AudioSource>().Play();
+            yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+            GetComponent<AudioSource>().clip = engineLoopClip;
+            GetComponent<AudioSource>().Play();
+            firstTime = false;
+        } else {
+            GetComponent<AudioSource>().clip = engineLoopClip;
+            GetComponent<AudioSource>().Play();
+        }
     }
     
 }

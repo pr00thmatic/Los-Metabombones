@@ -19,11 +19,13 @@ public class ChasePlayer : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        Vector3 direction = player.position - transform.position;
-        Quaternion angle =  Quaternion.LookRotation(direction, Vector3.up);
-        // rb.rotation = angle;
-        direction.Normalize();
-        movement = direction;
+        if (Vector3.Distance(player.position, transform.position) < 15) {
+            Vector3 direction = player.position - transform.position;
+            Quaternion angle =  Quaternion.LookRotation(direction, Vector3.up);
+            // rb.rotation = angle;
+            direction.Normalize();
+            movement = direction;
+        }
     }
     private void FixedUpdate() {
         moveCharacter(movement);
