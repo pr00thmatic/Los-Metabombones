@@ -6,7 +6,7 @@ public class toggleCollider : MonoBehaviour
 {
     // Start is called before the first frame update
     Collider m_Collider;
-     public AudioClip audio;
+     public new AudioClip audio;
      public PlayerControl control;
     void Start()
     {
