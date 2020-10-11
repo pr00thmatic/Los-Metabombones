@@ -7,6 +7,7 @@ public class enemyAttack : MonoBehaviour
     // Start is called before the first frame update
 
     public bool canAttack;
+    public int damage;
     public PlayerControl control;
     void Start()
     {
@@ -21,7 +22,7 @@ public class enemyAttack : MonoBehaviour
     IEnumerator _coRoutine() {
         if (canAttack) {
             canAttack = false;
-            control.lives--;
+            control.lives -= damage;
             Debug.Log("ouch " + control.lives );
             yield return new WaitForSeconds(2);
             canAttack = true;
