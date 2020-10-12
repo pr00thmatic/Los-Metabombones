@@ -473,7 +473,7 @@ PositionConstraint:
   m_Enabled: 1
   m_Weight: 1
   m_TranslationAtRest: {x: 1.96, y: 0.14, z: 0.20000005}
-  m_TranslationOffset: {x: 0, y: -0.36, z: 0}
+  m_TranslationOffset: {x: 0, y: 0, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
@@ -782,7 +782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  lives: 0
+  lives: 5
   motionSpeed: {x: 0, y: 0, z: 0}
   ballThrowDirection: {x: 0, y: 0, z: 0}
   useGamepad: 0
