@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class BossController : MonoBehaviour
 {
@@ -43,7 +44,10 @@ public class BossController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    Debug.Log(Vector3.Distance(player.position, transform.position));
+    if(PlayerControl.Instance.lives == 0)
+    {
+      SceneManager.LoadScene(gameObject.scene.name);
+    }
     if (player != null && Vector3.Distance(player.position, transform.position) < 40)
     {
       start = true;

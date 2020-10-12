@@ -17,7 +17,7 @@ public class Level1Spawner : MonoBehaviour
 
     public bool spawn = true;
     public bool waveSpawn = true;
-    public float waveTimer = 4.0f;
+    public float waveTimer = 8.0f;
     private float timeTillWave = 0.0f;
 	public int totalWaves = 100000;
 	private int numWaves = 0;
@@ -65,19 +65,19 @@ public class Level1Spawner : MonoBehaviour
 		rand = rand % 4;
 		GameObject Enemy ;
 		float distance = Vector3.Distance(control.gameObject.transform.position, gameObject.transform.position);
-		Debug.Log(distance);
+		Debug.Log("random " + rand);
 		if (distance < 100) {
 			if (rand == 0) {
 				Enemy = (GameObject) Instantiate(NormalEnemy, gameObject.transform.position, Quaternion.identity);
 			}
 			if (rand == 1) {
-				Enemy = (GameObject) Instantiate(NormalEnemy, gameObject.transform.position, Quaternion.identity);
+				Enemy = (GameObject) Instantiate(HLPlus, gameObject.transform.position, Quaternion.identity);
 			}
 			if (rand == 2) {
-				Enemy = (GameObject) Instantiate(NormalEnemy, gameObject.transform.position, Quaternion.identity);
+				Enemy = (GameObject) Instantiate(HLMinus, gameObject.transform.position, Quaternion.identity);
 			}
 			if (rand == 3) {
-				Enemy = (GameObject) Instantiate(NormalEnemy, gameObject.transform.position, Quaternion.identity);
+				Enemy = (GameObject) Instantiate(HealOrDamage, gameObject.transform.position, Quaternion.identity);
 			}
 		}
 		
