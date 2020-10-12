@@ -1835,7 +1835,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1509980834
 Transform:
@@ -1982,7 +1982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1bcce19651c45499f57e397bf5660d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: covidLevel
+  nextLevel: anonymusLevel
   engineStartClip: {fileID: 8300000, guid: e6733119eb7001a4882c34bb848bb5b3, type: 3}
   engineLoopClip: {fileID: 8300000, guid: 338f266c03082b2489f2ff6ced743004, type: 3}
   fadeTime: 3

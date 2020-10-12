@@ -102,6 +102,7 @@ public class BossController : MonoBehaviour
     if(!inmune && other.gameObject.tag == "Ball")
     {
       Destroy(this.gameObject);
+      LevelMusic.Instance.FadeSound();
     }
   }
 }
