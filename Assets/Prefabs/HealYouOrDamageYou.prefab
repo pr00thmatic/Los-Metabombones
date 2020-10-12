@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   moveSpeed: 5
-  minimumDistance: 15
+  minimumDistance: 100
 --- !u!1 &5664847289546874557
 GameObject:
   m_ObjectHideFlags: 0

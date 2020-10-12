@@ -74,10 +74,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0808d16301dea4468a051ea4a987959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoldierEnemy: {fileID: 8870651538655209136, guid: 8400ae728e81b474ebacf359d097e6a0,
+  NormalEnemy: {fileID: 4855764634256659765, guid: e1f7a9f4c438bdb49b3c9c3d267a5e09,
     type: 3}
-  totalEnemy: 10
+  HLPlus: {fileID: 8507420193579450300, guid: 4ecb442d9f5ca9b459f2608d93db618d, type: 3}
+  HLMinus: {fileID: 5619489530641609609, guid: 30082f1536ba55040a2de1e24cc2b4d1, type: 3}
+  HealOrDamage: {fileID: 5664847289403800866, guid: 4026ffa89f780964b93a9950752518e5,
+    type: 3}
+  totalEnemy: 1
   spawn: 1
   waveSpawn: 1
-  waveTimer: 30
-  totalWaves: 5
+  waveTimer: 4
+  totalWaves: 1000
