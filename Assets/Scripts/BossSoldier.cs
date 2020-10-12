@@ -8,6 +8,7 @@ public class BossSoldier : MonoBehaviour {
 
   public float speedMultiplier = 1;
   public float speed;
+  public bool attacked = false;
   public bool spinning = false;
   public bool attacking = false;
   public bool leaving = false;
@@ -62,6 +63,11 @@ public class BossSoldier : MonoBehaviour {
       transform.parent = c.transform;
       spinning = true;
       timeSpinning = Random.Range(timeRange.x, timeRange.y);
+    } else if (!attacked && c.GetComponentInParent<PlayerControl>()) {
+      PlayerControl.Instance.lives--;
+      attacked = true;
+      spinning = attacking = false;
+      leaving = true;
     }
   }
 }

@@ -17,5 +17,6 @@ public class CannonBullet : MonoBehaviour {
   void OnTriggerEnter (Collider c) {
     if (!c.GetComponent<CollideWithBullet>()) return;
     Destroy(gameObject);
+    PlayerControl.Instance.lives--;
   }
 }
