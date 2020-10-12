@@ -23,8 +23,10 @@ public class BossController : MonoBehaviour
   private List<int> Objetives = new List<int>();
   private List<GameObject> Allies = new List<GameObject>();
   private bool inmune;
-
+  private bool start = false;
   public float proyectilSpeed = 5f;
+  public Transform player;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -34,12 +36,19 @@ public class BossController : MonoBehaviour
     Allies.Add(Ally4);
     Allies.Add(Ally5);
     inmune = true;
+    start = false;
+    player = PlayerControl.Instance.transform;
   }
 
-    // Update is called once per frame
+  // Update is called once per frame
   void Update()
   {
-    if (currentTimeSpawn > inter)
+    Debug.Log(Vector3.Distance(player.position, transform.position));
+    if (player != null && Vector3.Distance(player.position, transform.position) < 40)
+    {
+      start = true;
+    }
+    if (currentTimeSpawn > inter && start)
     {
       currentTimeSpawn = 0f;
       if (phase == 1)
@@ -58,6 +67,10 @@ public class BossController : MonoBehaviour
       } else if (phase == 4)
       {
         inmune = false;
+        spawnAttack();
+        spawnAttack();
+        spawnAttack();
+        proyectilSpeed = 10;
       }
       if (currentTime > phaseTime)
       {
@@ -89,6 +102,7 @@ public class BossController : MonoBehaviour
     if(!inmune && other.gameObject.tag == "Ball")
     {
       Destroy(this.gameObject);
+      LevelMusic.Instance.FadeSound();
     }
   }
 }
