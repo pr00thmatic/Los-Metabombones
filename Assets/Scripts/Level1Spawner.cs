@@ -14,8 +14,9 @@ public class Level1Spawner : MonoBehaviour
 
     public bool spawn = true;
     public bool waveSpawn = true;
-    public float waveTimer = 5.0f;
+    public float waveTimer = 4.0f;
     private float timeTillWave = 0.0f;
+	
 	public int totalWaves = 100000;
 	private int numWaves = 0;
 
@@ -56,6 +57,8 @@ public class Level1Spawner : MonoBehaviour
 
     private void spawnEnemy()
 	{
+		int num = Random.Range(0, 1000);
+		num = num % 4;
 		GameObject Enemy = (GameObject) Instantiate(SoldierEnemy, gameObject.transform.position, Quaternion.identity);
  		// Increase the total number of enemies spawned and the number of spawned enemies
 		numEnemy++;
