@@ -8,7 +8,7 @@ public class LivesUI : MonoBehaviour {
   void Start () {
     for (int i=1; i<PlayerControl.Instance.lives; i++) {
       GameObject spawn = Instantiate(lives[0].gameObject);
-      spawn.transform.parent = transform;
+      spawn.transform.SetParent(transform);
       spawn.transform.localPosition = Vector3.zero;
       spawn.transform.localScale = Vector3.one;
       lives.Add(spawn.GetComponent<Animator>());
