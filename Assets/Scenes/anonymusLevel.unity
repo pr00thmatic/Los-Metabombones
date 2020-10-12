@@ -1041,8 +1041,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: covidLevel
-  engineStartClip: {fileID: 8300000, guid: 319e723d4d2afb549857b2097bbc5953, type: 3}
-  engineLoopClip: {fileID: 8300000, guid: d96171f944f173146830b9f5b281ac4d, type: 3}
+  engineStartClip: {fileID: 8300000, guid: 11390efa070f9304e91820ff66ea26e5, type: 3}
+  engineLoopClip: {fileID: 8300000, guid: 3507a01dfaf67314fb4cf865e683ea7f, type: 3}
   fadeTime: 3
 --- !u!82 &1730552075
 AudioSource:
@@ -1054,7 +1054,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 93d62da429921e244a16a3d32a03b20e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 11390efa070f9304e91820ff66ea26e5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
