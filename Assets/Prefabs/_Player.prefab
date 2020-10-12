@@ -918,6 +918,11 @@ PrefabInstance:
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
       objectReference: {fileID: 33547233635531326}
+    - target: {fileID: 2806019396407075177, guid: e4a401b4404dd2649a873752029746be,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 2806019397712461648, guid: e4a401b4404dd2649a873752029746be,
         type: 3}
       propertyPath: viewport
