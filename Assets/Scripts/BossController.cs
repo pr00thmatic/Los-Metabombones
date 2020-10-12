@@ -43,7 +43,6 @@ public class BossController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    Debug.Log(Vector3.Distance(player.position, transform.position));
     if (player != null && Vector3.Distance(player.position, transform.position) < 40)
     {
       start = true;

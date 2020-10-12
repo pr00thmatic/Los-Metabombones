@@ -1937,6 +1937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDistance: 5
+  c: {fileID: 7611925497109541227}
 --- !u!65 &7611925497109541227
 BoxCollider:
   m_ObjectHideFlags: 0
