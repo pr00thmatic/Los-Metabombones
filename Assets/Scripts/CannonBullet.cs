@@ -6,6 +6,7 @@ public class CannonBullet : MonoBehaviour {
   public float speed;
   public Transform model;
   public Collider[] rocketInvulnerable;
+  public bool attacked = false;
 
   void Update () {
     transform.Translate(0, 0, speed * Time.deltaTime);
@@ -15,8 +16,11 @@ public class CannonBullet : MonoBehaviour {
   }
 
   void OnTriggerEnter (Collider c) {
-    if (!c.GetComponent<CollideWithBullet>()) return;
+    if (attacked || !c.GetComponent<CollideWithBullet>()) return;
     Destroy(gameObject);
-    PlayerControl.Instance.lives--;
+    if (c.GetComponentInParent<PlayerControl>()) {
+      PlayerControl.Instance.lives--;
+    }
+    attacked = true;
   }
 }

@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class BossSoldier : MonoBehaviour {
   public float Speed { get => speedMultiplier * speed; }
 
+  public Knife knife;
   public float speedMultiplier = 1;
   public float speed;
   public bool attacked = false;
@@ -58,12 +59,18 @@ public class BossSoldier : MonoBehaviour {
   }
 
   void OnTriggerEnter (Collider c) {
-    if (spinning) return;
+    if (c.GetComponent<toggleCollider>()) {
+      Destroy(gameObject);
+    }
+
+    if (attacked || spinning) return;
     if (c.GetComponent<SoldiersBase>()) {
       transform.parent = c.transform;
       spinning = true;
       timeSpinning = Random.Range(timeRange.x, timeRange.y);
-    } else if (!attacked && c.GetComponentInParent<PlayerControl>()) {
+    } else if (attacking && c.GetComponent<Player>()) {
+      Debug.Log(c, c);
+      knife.Attack();
       PlayerControl.Instance.lives--;
       attacked = true;
       spinning = attacking = false;

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class LevelMusic : NonPersistentSingleton<LevelMusic>
 {
     // Start is called before the first frame update
-    static bool firstTime = true;
+    public static bool firstTime = true;
     public string nextLevel = "";
     public AudioClip engineStartClip;
     public AudioClip engineLoopClip;

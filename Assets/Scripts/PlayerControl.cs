@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerControl : NonPersistentSingleton<PlayerControl> {
   public event System.Action onThrowBallRequested;
+  public event System.Action onPlayerDeath;
 
   [Header("Configuration")]
   public float speed;
@@ -45,6 +46,7 @@ public class PlayerControl : NonPersistentSingleton<PlayerControl> {
 
     if (lives <= 0)  {
       Destroy(this.gameObject);
+      onPlayerDeath?.Invoke();
     }
     motionSpeed = (Right * InputManager.Player.Motion.ReadValue<Vector2>().x +
                    Forward * InputManager.Player.Motion.ReadValue<Vector2>().y) * speed;
