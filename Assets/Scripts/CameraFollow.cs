@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour {
   public bool follow = false;
 
   void FixedUpdate () {
-    if (!follow) return;
+    // if (!follow) return;
 
     root.transform.position = Vector3.SmoothDamp(root.transform.position, target.position, ref speed,
                                                  smoothTime);

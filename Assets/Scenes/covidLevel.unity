@@ -1808,6 +1808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 1509980832}
+  player: {fileID: 0}
 --- !u!54 &1509980832
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2193,6 +2194,36 @@ PrefabInstance:
       propertyPath: m_TranslationOffset.y
       value: -0.36
       objectReference: {fileID: 0}
+    - target: {fileID: 3434287116468913941, guid: 7188306be12bb76458177c9f617109de,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434287116468913941, guid: 7188306be12bb76458177c9f617109de,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434287116468913941, guid: 7188306be12bb76458177c9f617109de,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434287116468913941, guid: 7188306be12bb76458177c9f617109de,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434287116468913941, guid: 7188306be12bb76458177c9f617109de,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434287116468913941, guid: 7188306be12bb76458177c9f617109de,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3616926540825903707, guid: 7188306be12bb76458177c9f617109de,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2207,6 +2238,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 14.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616926542630267083, guid: 7188306be12bb76458177c9f617109de,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.49253607
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616926542630267083, guid: 7188306be12bb76458177c9f617109de,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.6103097
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616926542630267083, guid: 7188306be12bb76458177c9f617109de,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.043873515
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829332584150025102, guid: 7188306be12bb76458177c9f617109de,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6142741522540865378, guid: 7188306be12bb76458177c9f617109de,
         type: 3}
